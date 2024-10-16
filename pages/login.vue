@@ -12,7 +12,7 @@
       <NuxtLink to="/register">
         <Icon name="solar:key-minimalistic-square-2-linear" class="text-violet-500" size="30" />
       </NuxtLink>
-      <NuxtLink to="/register">
+      <NuxtLink to="/">
         <Icon name="solar:home-2-linear" class="text-violet-500" size="30" />
       </NuxtLink>
       <ThemeSwitch />
@@ -23,9 +23,14 @@
 <script lang="ts" setup>
 
 const loading = ref(false)
+const username = 'user'
+const password = '123456'
 
 const handleSubmit = (e:any) => {
   console.log(e.target[0].value, e.target[1].value)
+  if (e.target[0].value === username && e.target[1].value === password) {
+    navigateTo('/1')
+  }
 
   loading.value = true
 
